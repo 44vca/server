@@ -1,4 +1,5 @@
 const Router = require("../framework/Router");
+const bodyParser = require("../framework/bodyParser");
 
 const router = new Router();
 
@@ -8,17 +9,11 @@ const users = [
 ];
 
 router.get("/users", (req, res) => {
-  res.writeHead(200, {
-    "Content-Type": "application/json",
-  });
-  res.end(JSON.stringify(users));
+  res.send(users);
 });
 
 router.post("/users", (req, res) => {
-  res.writeHead(200, {
-    "Content-Type": "application/json",
-  });
-  res.end(JSON.stringify(users));
+  res.send(users);
 });
 
 module.exports = router;
